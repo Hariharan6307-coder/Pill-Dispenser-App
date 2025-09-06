@@ -5,5 +5,4 @@
 </script>
 
 <DateNavigator/>
-<TimeSelector/>
-<Clock/>
+<TimeSelector />

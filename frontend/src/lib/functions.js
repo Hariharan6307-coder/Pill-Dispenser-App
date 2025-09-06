@@ -1,4 +1,4 @@
-async function getTimings() {
+export async function getTimings() {
   try {
     const response = await fetch("http://localhost:4000/get-timings");
 
@@ -17,9 +17,3 @@ async function getTimings() {
   }
 }
 
-// Example usage
-getTimings().then(data => {
-  // Store or use the data
-  // Example: save to localStorage
-  localStorage.setItem("data", JSON.stringify(data));
-});

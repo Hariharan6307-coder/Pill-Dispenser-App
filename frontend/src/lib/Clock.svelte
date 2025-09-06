@@ -1,7 +1,24 @@
 <script>
+  import { get } from "svelte/store";
+  import { getTimings } from "./functions";
+
+  let { time } = $props();
+  let selectedTime = $state(time);
+
+  getTimings().then(data => updateTime(data));
+
+  export function updateTime(data) {
+    selectedTime = time;
+    const timings = data[`${selectedTime}_time`];
+    if (timings) {
+      const [h, m, s] = timings.split(":").map(Number) ;
+      hour = parseInt(h);
+      minute = parseInt(m);
+    }
+  }
+
   let hour = $state(8);
   let minute = $state(0);
-  let period = $state("AM");
 
   function format(value) {
     return value.toString().padStart(2, "0");
@@ -22,10 +39,6 @@
   function decreaseMinute() {
     minute = (minute - 1 + 60) % 60;
   }
-
-  function togglePeriod() {
-    period = period === "AM" ? "PM" : "AM";
-  }
 </script>
 
 <!-- Wrapper to center -->
@@ -45,12 +58,6 @@
       <button onclick={increaseMinute}>▲</button>
       <span>{format(minute)}</span>
       <button onclick={decreaseMinute}>▼</button>
-    </div>
-
-    <!-- Period -->
-    <div class="period">
-      <button class:active={period === "AM"} onclick={() => (period = "AM")}>am</button>
-      <button class:active={period === "PM"} onclick={() => (period = "PM")}>pm</button>
     </div>
   </div>
 </div>

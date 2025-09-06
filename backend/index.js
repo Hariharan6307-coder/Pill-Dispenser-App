@@ -13,8 +13,9 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 
 app.get("/get-timings", async (req, res) => {
   const { data, error } = await supabase
-    .from("users")   // replace with your table name
-    .select("morning_time, evening_time, night_time");    // columns to fetch, "*" means all
+    .from("users")
+    .select("morning_time, evening_time, night_time")
+    .single(); 
 
   if (error) {
     return res.status(500).json({ error: error.message });

@@ -1,12 +1,18 @@
-<!-- TimeSelector.svelte -->
 <script>
+  import Clock from './Clock.svelte';
+  import { getTimings } from './functions';
+
+  let clock;
+
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
   let selected = $state("morning");
   const times = ["morning", "evening", "night"];
 
   function select(time) {
     selected = time;
-    // Optionally, dispatch an event if you want to notify parent
-    // createEventDispatcher() can be used for that
+    dispatch('select', { time });
   }
 </script>
 
@@ -14,13 +20,20 @@
   {#each times as time}
     <button
       class:selected={selected === time}
-      onclick={() => select(time)}
+      onclick={() => {
+        select(time);
+        getTimings().then(data => {
+          clock.updateTime(data);
+        });
+        }}
       type="button"
     >
       {time}
     </button>
   {/each}
 </div>
+
+<Clock bind:this={clock} time={selected}/>
 
 <style>
   .time-selector {
