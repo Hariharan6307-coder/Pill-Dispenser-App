@@ -39,6 +39,12 @@
   function decreaseMinute() {
     minute = (minute - 1 + 60) % 60;
   }
+
+  export function formatTime() {
+    const hh = hour.toString().padStart(2, "0");
+    const mm = minute.toString().padStart(2, "0");
+    return `${hh}:${mm}:00`;
+  }
 </script>
 
 <!-- Wrapper to center -->
@@ -112,24 +118,5 @@
     cursor: pointer;
     font-size: 0.8rem;
     color: var(--color-primary);
-  }
-
-  .period {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.5rem;
-  }
-
-  .period button {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--color-card);
-    opacity: 0.6;
-    transition: 0.2s;
-  }
-
-  .period button.active {
-    opacity: 1;
-    text-decoration: underline;
   }
 </style>
