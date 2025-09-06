@@ -25,17 +25,11 @@
   }
 
   function increaseHour() {
-    hour = hour === 12 ? 1 : hour + 1;
-    if (hour === 24) {
-      hour = 0;
-    }
+    hour = hour === 24 ? 1 : hour + 1;
   }
 
   function decreaseHour() {
-    hour = hour === 1 ? 12 : hour - 1;
-    if (hour === 24) {
-      hour = 0;
-    }
+    hour = hour === 1 ? 24 : hour - 1;
   }
 
   function increaseMinute() {
