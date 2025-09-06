@@ -1,1 +1,5 @@
-<h2>Pill SLots</h2>
+<script>
+  import DateNavigator from "../../lib/DateNavigator.svelte";
+</script>
+
+<DateNavigator/>
