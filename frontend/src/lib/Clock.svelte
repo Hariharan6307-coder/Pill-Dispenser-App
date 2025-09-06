@@ -26,10 +26,16 @@
 
   function increaseHour() {
     hour = hour === 12 ? 1 : hour + 1;
+    if (hour === 24) {
+      hour = 0;
+    }
   }
 
   function decreaseHour() {
     hour = hour === 1 ? 12 : hour - 1;
+    if (hour === 24) {
+      hour = 0;
+    }
   }
 
   function increaseMinute() {
