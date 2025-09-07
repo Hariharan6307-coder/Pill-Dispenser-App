@@ -10,6 +10,27 @@ app.use(express.json());
 
 // Connect to Supabase
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+const ESP32_IP = "http://10.55.139.208"; 
+
+app.get("/flip-flap", async (req, res) => {
+  try {
+    const response = await fetch(`${ESP32_IP}/flap/open`);
+    const text = await response.text();
+    res.json({ message: text });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to toggle ESP32", details: err.message });
+  }
+});
+
+app.get("/rotate", async (req, res) => {
+  try {
+    const response = await fetch(`${ESP32_IP}/rotate`);
+    const text = await response.text();
+    res.json({ message: text });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to toggle ESP32", details: err.message });
+  }
+});
 
 app.get("/get-timings", async (req, res) => {
   const { data, error } = await supabase

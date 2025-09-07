@@ -29,6 +29,18 @@ export async function updateReminderTime(columnName, timeString) {
   console.log(data);
 }
 
+export async function flipTheFlap() {
+  const res = await fetch("http://localhost:4000/flip-flap");
+  const data = await res.json();
+  const text = data.message; // Show LED status ("LED is on/off")
+}
+
+export async function rotateTheBox() {
+  const res = await fetch("http://localhost:4000/rotate");
+  const data = await res.json();
+  const text = data.message; // Show LED status ("LED is on/off")
+}
+
 // Example usage:
 updateReminderTime(1, "08:00:00"); // sets 8:00 AM
 

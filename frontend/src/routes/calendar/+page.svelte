@@ -1,10 +1,13 @@
 <script>
+  import { flipTheFlap } from "../../lib/functions";
+  import { rotateTheBox } from "../../lib/functions";
+
   function flipFlap() {
-    console.log("Flip the flap button clicked!");
+    flipTheFlap();
   }
 
   function rotateBase() {
-    console.log("Rotate the base button clicked!");
+    rotateTheBox();
   }
 </script>
 
