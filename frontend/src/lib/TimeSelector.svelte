@@ -1,10 +1,12 @@
 <script>
   import Clock from './Clock.svelte';
+  import PillDataContainer from './PillDataContainer.svelte';
+  
   import { getTimings } from './functions';
-
   import { updateReminderTime } from './functions';
 
   let clock;
+  let pillData;
   let clicked = $state(false);
 
   function handleClick() {
@@ -42,6 +44,7 @@
 </div>
 
 <Clock bind:this={clock} time={selected}/>
+<PillDataContainer bind:this={pillData}/>
 
 <button 
   class="save-btn floating-save" 
@@ -51,6 +54,7 @@
     let timeFormat = clock.formatTime();
     console.log("Saving time:", timeFormat);
     updateReminderTime(`${selected}_time`, timeFormat);
+    pillData.getPillData();
   }}>
   Save
 </button>
