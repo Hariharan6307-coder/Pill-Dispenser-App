@@ -1,9 +1,31 @@
 <script>
-  let pills = [
-    { name: '', quantity: '' },
-    { name: '', quantity: '' },
-    { name: '', quantity: '' }
-  ];
+  import { updatePillData } from "./functions";
+  import { fetchWeeklyPillData } from "./functions";
+
+  let pills = [];
+
+export async function loadWeeklyPills() {
+  const result = await fetchWeeklyPillData();
+  if (result.weekly_pill_data) {
+    pills = result.weekly_pill_data; // assign parsed data
+  } else {
+    pills = []; // fallback if no data
+  }
+}
+
+loadWeeklyPills();
+
+  export function getPillData(date, selectedTime) {
+
+    // This function can be expanded to fetch data from an API or local storage
+    let pillData = [
+          { name: pills[0].name, quantity: pills[0].quantity},
+          { name: pills[1].name, quantity: pills[1].quantity },
+          { name: pills[2].name, quantity: pills[2].quantity }
+        ];
+
+    updatePillData(JSON.stringify(pillData));
+  } 
 </script>
 
 <div class="pill-table">
@@ -18,7 +40,7 @@
       <input
         type="number"
         min="0"
-        placeholder="Quantity"
+        placeholder="Qty"
         bind:value={pills[i].quantity}
         class="pill-qty-input"
       />

@@ -1,10 +1,12 @@
 <script>
   import Clock from './Clock.svelte';
   import PillDataContainer from './PillDataContainer.svelte';
+  import DateNavigator from './DateNavigator.svelte';
   
   import { getTimings } from './functions';
   import { updateReminderTime } from './functions';
 
+  let dateNav;
   let clock;
   let pillData;
   let clicked = $state(false);
@@ -25,6 +27,7 @@
     dispatch('select', { time });
   }
 </script>
+<DateNavigator bind:this={dateNav} />
 
 <div class="time-selector">
   {#each times as time}
@@ -52,9 +55,8 @@
   onclick={() => {
     handleClick();
     let timeFormat = clock.formatTime();
-    console.log("Saving time:", timeFormat);
     updateReminderTime(`${selected}_time`, timeFormat);
-    pillData.getPillData();
+    pillData.getPillData("11-09-2002", selected);
   }}>
   Save
 </button>

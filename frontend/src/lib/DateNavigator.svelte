@@ -7,9 +7,12 @@
   let maxDate = $state(new Date(today));
   maxDate.setDate(today.getDate() + 7);
 
+  let cDate = $derived(currentDate);
+
   // derived states
   let isToday = $derived(currentDate.toDateString() === today.toDateString());
   let isMaxDay = $derived(currentDate.toDateString() === maxDate.toDateString());
+
 
   // helpers
   function formatDate(date) {
