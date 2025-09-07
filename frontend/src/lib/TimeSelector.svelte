@@ -47,7 +47,7 @@
 </div>
 
 <Clock bind:this={clock} time={selected}/>
-<PillDataContainer bind:this={pillData}/>
+<PillDataContainer bind:this={pillData} disabled={false}/>
 
 <button 
   class="save-btn floating-save" 

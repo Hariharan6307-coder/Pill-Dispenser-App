@@ -1,4 +1,5 @@
 <script>
+  import PillDataContainer from "../lib/PillDataContainer.svelte";
   export let time = "7:30 PM";
   export let day = "Today";
   export let image = "images/icons/pills.png"; 
@@ -12,6 +13,8 @@
   </div>
   <img src={image} alt="" class="pill-image"/>
 </div>
+
+<PillDataContainer disabled={true}/>
 
 <style>
   .pill-reminder {

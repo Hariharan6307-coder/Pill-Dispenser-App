@@ -1,8 +1,10 @@
 <script>
+  let { disabled } = $props();
+
   import { updatePillData } from "./functions";
   import { fetchWeeklyPillData } from "./functions";
 
-  let pills = [];
+  let pills = $state([]);
 
 export async function loadWeeklyPills() {
   const result = await fetchWeeklyPillData();
@@ -34,6 +36,7 @@ loadWeeklyPills();
       <input
         type="text"
         placeholder="Pill Name"
+        disabled={disabled}
         bind:value={pills[i].name}
         class="pill-name-input"
       />
@@ -41,6 +44,7 @@ loadWeeklyPills();
         type="number"
         min="0"
         placeholder="Qty"
+        disabled={disabled}
         bind:value={pills[i].quantity}
         class="pill-qty-input"
       />
