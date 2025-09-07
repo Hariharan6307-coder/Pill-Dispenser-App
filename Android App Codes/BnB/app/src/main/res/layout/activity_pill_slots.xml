@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context="com.example.bnb.PillSlotsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageButton
+                android:id="@+id/leftArrow"
+                android:layout_width="113dp"
+                android:layout_height="79dp"
+                android:src="@drawable/leftarrow"
+                android:background="@color/white">
+
+            </ImageButton>
+
+
+            <TextView
+                android:id="@+id/tvSelectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginBottom="0dp"
+                android:text="7 Sept 2025"
+                android:textAlignment="center"
+                android:textColor="@color/correct_teal"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/rightArrow"
+                android:layout_width="113dp"
+                android:layout_height="79dp"
+                android:src="@drawable/rightarrow"
+                android:background="@color/white">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMorning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Morning"
+                android:textSize="19sp"
+                android:backgroundTint="@color/correct_teal"
+                app:cornerRadius="22dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEvening"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Evening"
+                android:textSize="20sp"
+                android:backgroundTint="@color/correct_teal"
+                app:cornerRadius="22dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Night"
+                android:textSize="22sp"
+                android:backgroundTint="@color/correct_teal"
+                app:cornerRadius="22dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/time"
+                android:layout_width="300sp"
+                android:layout_height="52dp"
+                android:hint="   Enter time"
+                android:textColorHint="@color/white"
+                android:background="@color/correct_teal"
+                />
+
+            <Button
+                android:layout_width="61dp"
+                android:layout_height="77dp"
+                android:layout_marginLeft="15dp"
+                android:backgroundTint="@color/orange"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="28dp"
+                app:cornerRadius="22dp">
+
+            </Button>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pillname1"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter medicine name" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dose1"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter dose" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pillname2"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter medicine name" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dose2"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter dose" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pillname3"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter medicine name" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dose3"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter dose" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="07 : 30"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/black" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="237dp"
+                android:layout_height="match_parent">
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Save"
+            android:textSize="22sp"
+            app:cornerRadius="22dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/home_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:src="@drawable/home_icon"></ImageButton>
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/remoteControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="59dp"
+        android:text="REMOTE CONTROL"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rotate"
+        android:layout_width="165dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="123dp"
+        android:backgroundTint="@color/correct_teal"
+        android:text="ROTATE"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remoteControl" />
+
+    <Button
+        android:id="@+id/flipflap"
+        android:layout_width="165dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="118dp"
+        android:backgroundTint="@color/correct_teal"
+        android:text="FLIPFLAP"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rotate" />
+
+    <Button
+        android:id="@+id/buzz"
+        android:layout_width="165dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="174dp"
+        android:backgroundTint="@color/correct_teal"
+        android:text="BUZZ"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flipflap" />
+</androidx.constraintlayout.widget.ConstraintLayout>

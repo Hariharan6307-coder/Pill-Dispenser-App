@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BnB</string>
+    <string-array name="am_pm_array">
+        <item>am</item>
+        <item>pm</item>
+    </string-array>
+</resources>
